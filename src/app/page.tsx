@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Country } from '@/types/country';
-import { getAllCountries, getCountriesByRegion } from '@/utils/api';
-import SearchBar from '@/components/SearchBar';
-import FilterDropdown from '@/components/FilterDropdown';
-import CountryGrid from '@/components/CountryGrid';
+import { useState, useEffect } from "react";
+import { Country } from "@/types/country";
+import { getAllCountries, getCountriesByRegion } from "@/utils/api";
+import SearchBar from "@/components/SearchBar";
+import FilterDropdown from "@/components/FilterDropdown";
+import CountryGrid from "@/components/CountryGrid";
 
 export default function Home() {
   const [countries, setCountries] = useState<Country[]>([]);
   const [filteredCountries, setFilteredCountries] = useState<Country[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [currentFilter, setCurrentFilter] = useState('All');
+  const [currentFilter, setCurrentFilter] = useState("All");
 
   useEffect(() => {
     loadCountries();
@@ -25,7 +25,7 @@ export default function Home() {
       setCountries(data);
       setFilteredCountries(data);
     } catch (err) {
-      setError('Failed to load countries');
+      setError("Failed to load countries");
     } finally {
       setLoading(false);
     }
@@ -37,10 +37,11 @@ export default function Home() {
       return;
     }
 
-    const filtered = countries.filter(country =>
-      country.name.common.toLowerCase().includes(query.toLowerCase()) ||
-      country.region.toLowerCase().includes(query.toLowerCase()) ||
-      country.capital?.[0]?.toLowerCase().includes(query.toLowerCase())
+    const filtered = countries.filter(
+      (country) =>
+        country.name.common.toLowerCase().includes(query.toLowerCase()) ||
+        country.region.toLowerCase().includes(query.toLowerCase()) ||
+        country.capital?.[0]?.toLowerCase().includes(query.toLowerCase())
     );
     setFilteredCountries(filtered);
   };
@@ -48,9 +49,9 @@ export default function Home() {
   const handleFilterChange = async (region: string) => {
     setCurrentFilter(region);
     setLoading(true);
-    
+
     try {
-      if (region === 'All') {
+      if (region === "All") {
         const data = await getAllCountries();
         setCountries(data);
         setFilteredCountries(data);
@@ -60,7 +61,7 @@ export default function Home() {
         setFilteredCountries(data);
       }
     } catch (err) {
-      setError('Failed to filter countries');
+      setError("Failed to filter countries");
     } finally {
       setLoading(false);
     }
@@ -85,14 +86,16 @@ export default function Home() {
   return (
     <div className="space-y-8">
       {/* Search and Filter */}
-      <div className="flex flex-col md:flex-row gap-4 md:justify-between">
-        <div className="flex-1 max-w-md">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-14">
+        <div className="w-full md:w-1/2">
           <SearchBar onSearch={handleSearch} />
         </div>
-        <FilterDropdown
-          onFilterChange={handleFilterChange}
-          currentFilter={currentFilter}
-        />
+        <div className="w-full md:w-auto">
+          <FilterDropdown
+            onFilterChange={handleFilterChange}
+            currentFilter={currentFilter}
+          />
+        </div>
       </div>
 
       {/* Results */}

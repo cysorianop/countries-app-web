@@ -1,14 +1,14 @@
-import type { Metadata } from 'next';
-import { Nunito_Sans } from 'next/font/google';
-import './globals.css';
-import { ThemeProvider } from '@/contexts/ThemeContext';
-import ThemeToggle from '@/components/ThemeToggle';
+import type { Metadata } from "next";
+import { Nunito_Sans } from "next/font/google";
+import "./globals.css";
+import { ThemeProvider } from "@/contexts/ThemeContext";
+import ThemeToggle from "@/components/ThemeToggle";
 
-const nunitoSans = Nunito_Sans({ subsets: ['latin'] });
+const nunitoSans = Nunito_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Where in the world?',
-  description: 'Find information about countries around the world',
+  title: "Where in the world?",
+  description: "Find information about countries around the world",
 };
 
 export default function RootLayout({
@@ -37,7 +37,7 @@ export default function RootLayout({
             </header>
 
             {/* Main Content */}
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <main className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-12 py-8 md:py-16">
               {children}
             </main>
           </div>
