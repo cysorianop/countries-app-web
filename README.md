@@ -27,7 +27,7 @@ Se utilizó una arquitectura modular con separación clara de responsabilidades.
 
 Estructura general de carpetas:
 
-![Diseño desktop](./public/estructura.png)
+![Diseño desktop](./public/estructura-general.png)
 
 Estructura carpeta src:
 
