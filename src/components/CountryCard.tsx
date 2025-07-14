@@ -1,3 +1,4 @@
+import React from 'react';
 import { Country } from '@/types/country';
 import Link from 'next/link';
 
