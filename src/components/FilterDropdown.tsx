@@ -22,7 +22,7 @@ export default function FilterDropdown({
   };
 
   return (
-    <div className="relative">
+    <div className="relative py-6">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center justify-between w-full min-w-[200px] px-4 py-4 bg-white dark:bg-dark-blue text-very-dark-blue-text dark:text-white rounded-lg shadow-md hover:shadow-lg transition-all"
