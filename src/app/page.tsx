@@ -88,9 +88,11 @@ export default function Home() {
       {/* Search and Filter */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-14">
         <div className="w-full md:w-1/2">
+          //Reutilizacion del componente Search bar
           <SearchBar onSearch={handleSearch} />
         </div>
         <div className="w-full md:w-auto">
+          //Reutilizacion del componente Filter Dropdown
           <FilterDropdown
             onFilterChange={handleFilterChange}
             currentFilter={currentFilter}
@@ -104,6 +106,7 @@ export default function Home() {
           <p className="text-gray-500 text-lg">No countries found</p>
         </div>
       ) : (
+        //Reutilizacion del componente Country Grid
         <CountryGrid countries={filteredCountries} />
       )}
     </div>

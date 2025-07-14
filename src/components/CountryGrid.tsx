@@ -10,6 +10,7 @@ export default function CountryGrid({ countries }: CountryGridProps) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-y-12 gap-x-8">
       {countries.map((country) => (
+        //Reutilizacion del componente Country Card
         <CountryCard key={country.cca3} country={country} />
       ))}
     </div>

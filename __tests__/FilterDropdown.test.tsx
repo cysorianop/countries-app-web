@@ -6,11 +6,9 @@ test('calls onFilterChange when region is selected', () => {
   const handleChange = jest.fn();
   render(<FilterDropdown currentFilter="" onFilterChange={handleChange} />);
 
-  // Encuentra el botón
   const button = screen.getByRole('button');
   fireEvent.click(button);
 
-  // Simula seleccionar una opción (esto depende de cómo renderizas las opciones)
   const option = screen.getByText('Americas');
   fireEvent.click(option);
 

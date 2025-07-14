@@ -17,12 +17,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    // 👇 importante: clase "dark" se aplica aquí desde ThemeContext
     <html lang="en">
-      {/* 👇 no es necesario usar dark:bg aquí si ya se aplica en un div dentro */}
       <body className={nunitoSans.className}>
         <ThemeProvider>
-          {/* 👇 ahora sí: aquí va el contenedor que usa dark:bg-... */}
           <div className="min-h-screen bg-very-light-gray dark:bg-very-dark-blue transition-colors">
             {/* Header */}
             <header className="bg-white dark:bg-dark-blue shadow-sm">
