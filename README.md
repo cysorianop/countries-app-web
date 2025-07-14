@@ -25,21 +25,13 @@ Se utilizó una arquitectura modular con separación clara de responsabilidades.
 
 ### Estructura del Proyecto
 
-src/
-├── app/
-│   ├── page.tsx               → Página principal
-│   ├── layout.tsx             → Layout general
-│   └── country/[name]/        → Ruta dinámica por país
-├── components/                → Componentes reutilizables
-│   ├── CountryCard.tsx
-│   ├── CountryGrid.tsx
-│   ├── CountryDetail.tsx
-│   ├── SearchBar.tsx
-│   └── FilterDropdown.tsx
-├── types/                     → Tipos TypeScript (Country, API)
-├── utils/                     → Funciones utilitarias (fetch a API)
-├── styles/                    → Archivos CSS globales
-└── __tests__/                 → Pruebas unitarias
+Estructura general de carpetas:
+
+![Diseño desktop](./public/estructura.png)
+
+Estructura carpeta src:
+
+![Diseño desktop detalles](./public/estructura.png)
 
 ### Componentes Principales
 
@@ -111,7 +103,7 @@ npm run test:coverage
 
 ---
 
-## 🖼️ Diseño de Referencia
+## Diseño de Referencia
 
 Vista de escritorio paises:
 
@@ -159,7 +151,6 @@ Vista móvil detalles paises:
 - Componentes testeados:
    * CountryCard, CountryGrid, CountryDetail
    * SearchBar, FilterDropdown
-   * Funciones API (getCountryByName, getCountryByCodes)
 
 - Cobertura
 
@@ -178,8 +169,6 @@ Solución:
 Migración del detalle a un componente cliente (use client) con useEffect y loading state, manteniendo UX fluida.
 
 # Recomendaciones futuras
- - Agregar E2E con Cypress o Playwright.
- - Internacionalización (i18n) del contenido.
  - Paginación o virtual scroll en listas.
  - Mejora de accesibilidad (etiquetas ARIA).
 
